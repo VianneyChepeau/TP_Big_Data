@@ -19,8 +19,8 @@ class EnvGrid(object):
     def __init__(self):
         super(EnvGrid, self).__init__()
 
-        self.grid = [
-            [
+        self.grid = [ 
+            [ # Ligne 1
                 Case(0, False, True, False, True),
                 Case(0, True, True, False, False),
                 Case(0, True, True, False, False),
@@ -28,25 +28,50 @@ class EnvGrid(object):
                 Case(0, True, True, False, False),
                 Case(0, True, False, False, True)
             ],
-            [
-                Case(0, False, True, False, True),0,0,0,0,0
+            [ # Ligne 2
+                Case(0, False, True, False, True),
+                Case(0, False, True, True, True),
+                Case(0, True, True, False, True),
+                Case(0, True, False, True, True),
+                Case(0, False, True, False, True),
+                Case(0, True, False, True, False)
             ],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-        ]
-        self.deplacements = [
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-            [0,0,0,0,0,0],
-        ]
-
+            [ # Ligne 3 
+                Case(0, False, True, True, True),
+                Case(0, True, False, True, True),
+                Case(0, False, False, True, True),
+                Case(0, False, True, True, False),
+                Case(0, True, True, True, True),
+                Case(1, True, False, False, True)
+            ],
+            [ # Ligne 4 
+                Case(0, False, False, True, True),
+                Case(0, False, True, True, True),
+                Case(0, True, True, True, False),
+                Case(0, True, True, False, True),
+                Case(0, True, True, True, False),
+                Case(0, True, False, True, True)
+            ],
+            [ # Ligne 5
+                Case(0, False, False, True, True),
+                Case(0, False, True, True, True),
+                Case(0, True, True, False, True),
+                Case(0, True, True, True, True),
+                Case(0, True, True, False, True),
+                Case(0, True, False, True, False)
+            ],
+            [# Ligne 6
+                Case(0, False, True, True, False),
+                Case(0, True, False, True, False),
+                Case(0, False, True, True, False),
+                Case(1, True, False, True, True),
+                Case(0, False, True, True, False),
+                Case(0, True, False, False, False)
+            ],
+        ] 
+        
         # starting position
-        self.st_pos = [0,2]
+        self.st_pos = [0,0]
         self.reset()
 
         self.actions = [
@@ -109,10 +134,6 @@ if __name__ == '__main__':
     Q = [
         [0, 0, 0, 0], ## pour l'état 0 (n'existe pas)
         [0, 0, 0, 0], ## pour l'état 1
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0],
